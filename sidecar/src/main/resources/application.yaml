@@ -1,12 +1,13 @@
 server:
-  port: 8766
+  port: 8767
 spring:
   application:
-    name: service-feign
+    name: service-sidecar
 eureka:
   client:
     service-url:
       defaultUrl: http://localhost:8761/eureka
-feign:
-  hystrix:
-    enabled: true
+sidecar:
+  port: 8686
+  health-uri: http://localhost:8686/rest/health
+

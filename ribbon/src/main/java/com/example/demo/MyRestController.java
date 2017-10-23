@@ -14,11 +14,16 @@ public class MyRestController {
 
     @Autowired
     RestService restService;
+    @Autowired
+    PythonService pythonService;
 
     @GetMapping(value = "/rest")
     public String rest(){
         return  restService.rest();
     }
 
-
+    @GetMapping(value = "/python")
+    public String python(){
+        return  pythonService.rest();
+    }
 }

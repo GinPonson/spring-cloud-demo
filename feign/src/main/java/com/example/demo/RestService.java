@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @since 2017/10/21
  */
 @Service
-@FeignClient(value = "SERVICE-HI")
+@FeignClient(value = "SERVICE-HI",fallback = RestServiceFallback.class)
 public interface RestService {
 
     @GetMapping(value = "/hi")
